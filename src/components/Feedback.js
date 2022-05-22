@@ -28,7 +28,6 @@ const Feedback = () => {
     React.useEffect(()=>{
         // if exist
         handleCheckReviewExist();
-        console.log(product);
     }, []);
 
 

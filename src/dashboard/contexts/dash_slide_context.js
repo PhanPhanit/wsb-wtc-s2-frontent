@@ -1,7 +1,7 @@
 import React, {useReducer, useContext, createContext} from 'react';
 import reducer from '../reducers/dash_slide_reducer';
 import { slideUrl } from '../../UrlEndPoint';
-import axios from 'axios';
+import axios from '../../axiosPrivate';
 import { toast } from 'react-toastify';
 import { 
     SET_SLIDE,
@@ -23,7 +23,7 @@ const DashSlideContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const fetchSlide = async () => {
-        const url = `${slideUrl}/admin?sort=-createdAt&limit=1000`;
+        const url = `${slideUrl}/admin?sort=-created_at&limit=1000`;
         try {
             const {data: {slide}} = await axios.get(url);
             dispatch({type: SET_SLIDE, payload: slide});

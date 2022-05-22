@@ -21,7 +21,7 @@ const dash_slide_reducer = (state, action) => {
     }
     if(action.type===DELETE_SLIDE){
         const slideId = action.payload;
-        const tempSlides = state.slides.filter(item=>item._id!==slideId);
+        const tempSlides = state.slides.filter(item=>item.id!==slideId);
         return {
             ...state,
             slides: tempSlides
@@ -33,7 +33,7 @@ const dash_slide_reducer = (state, action) => {
     if(action.type===UPDATE_SLIDE){
         const {slide, slideId} = action.payload;
         const updateSlide = state.slides.map(item=>{
-            if(item._id===slideId){
+            if(item.id===slideId){
                 return slide;
             }
             return item;

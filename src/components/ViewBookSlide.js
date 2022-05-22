@@ -58,7 +58,7 @@ const ViewBookSlide = ({product=[], loading=true, error=false}) => {
                     {
                         product.map((item)=>{
                             const {
-                                _id: productId,
+                                id: productId,
                                 name,
                                 author,
                                 sold,

@@ -68,7 +68,7 @@ const SlidePage = () => {
             {
               slides.map((slide, index)=>{
                 const numbering = index + 1;
-                const {_id: id, title, product: {image}, isShow} = slide;
+                const {id, title, product: {image}, isShow} = slide;
                 return (
                   <tr key={index}>
                     <td>{numbering}</td>

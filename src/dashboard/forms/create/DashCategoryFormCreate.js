@@ -6,7 +6,7 @@ import UploadLoading from '../../../images/upload-loading.gif';
 import { useActionContext } from '../../contexts/action_context';
 import { useDashCategoryContext } from '../../contexts/dash_category_context';
 import { uploadPhotoCloud } from '../../../UrlEndPoint';
-import axios from 'axios';
+import axios from '../../../axiosPrivate';
 import {toast} from 'react-toastify';
 import {useLanguageContext} from '../../../context/language_context';
 import Translate, {translateText} from '../../../Translate';

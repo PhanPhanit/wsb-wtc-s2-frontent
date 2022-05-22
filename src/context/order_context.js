@@ -1,6 +1,6 @@
 import React, {useContext, createContext, useReducer, useState} from 'react';
 import reducer from '../reducers/order_reducer';
-import axios from 'axios';
+import axios from '../axiosPrivate';
 import {
     createOrder as createOrderUrl,
     getAllMyOrder as getAllMyOrderUrl
@@ -39,7 +39,6 @@ const OrderProvider = ({children}) => {
     const createOrder = async (order) => {
         try {
             const {data} = await axios.post(createOrderUrl, order);
-            console.log(data);
         } catch (error) {
             if(error.response){
                 const {msg} = error.response.data;

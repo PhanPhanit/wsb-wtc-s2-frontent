@@ -6,12 +6,11 @@ import {MdOutlineDateRange} from 'react-icons/md';
 import '../../styles/dashFrm.css';
 import { useActionContext } from '../../contexts/action_context';
 import {useDashOrderContext} from '../../contexts/dash_order_context';
-import axios from 'axios';
 import {toast} from 'react-toastify';
 import {formatMoney, sortName} from '../../../utils/Tools';
 import {orderUrl} from '../../../UrlEndPoint';
 import {useLanguageContext} from '../../../context/language_context';
-import Translate, {translateText} from '../../../Translate';
+import Translate from '../../../Translate';
 
 const DashOrderFormUpdate = () => {
     const navigate = useNavigate();
@@ -47,7 +46,7 @@ const DashOrderFormUpdate = () => {
 
     }
     const fetchLocalSingleOrder = (orderId) => {
-        const singleOrder = orders.find(item=>item._id===orderId);
+        const singleOrder = orders.find(item=>item.id===orderId);
         setDataFormOrder(singleOrder);
     }
 

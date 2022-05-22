@@ -21,7 +21,7 @@ const dash_category_reducer = (state, action) => {
     }
     if(action.type===DELETE_CATEGORY){
         const categoryId = action.payload;
-        const tempCategories = state.categories.filter(item=>item._id!==categoryId);
+        const tempCategories = state.categories.filter(item=>item.id!==categoryId);
         return {
             ...state,
             categories: tempCategories
@@ -33,7 +33,7 @@ const dash_category_reducer = (state, action) => {
     if(action.type===UPDATE_CATEGORY){
         const {category, categoryId} = action.payload;
         const updateCategory = state.categories.map(item=>{
-            if(item._id===categoryId){
+            if(item.id===categoryId){
                 return category;
             }
             return item;

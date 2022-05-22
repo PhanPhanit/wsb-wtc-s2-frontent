@@ -37,7 +37,7 @@ const BookPage = () => {
   const firstFetchProduct = async () => {
     setFetchProductLoading(true);
     try {
-      await fechProduct(`${productUrl}/all?page=${productPage}&sort=-createdAt`);
+      await fechProduct(`${productUrl}/all?page=${productPage}&sort=-created_at`);
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +45,7 @@ const BookPage = () => {
   }
   const firstFetchCategory = async () => {
     try {
-      await fetchCategory(`${categoryUrl}/all?isShow=true&sort=-createdAt`);
+      await fetchCategory(`${categoryUrl}/all?isShow=true&sort=-created_at`);
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +54,7 @@ const BookPage = () => {
   const pageChange = async (_, value) => {
     setProductPage(value);
     setTableLoading(true);
-    let url = `${productUrl}/all?page=${value}&sort=-createdAt`;
+    let url = `${productUrl}/all?page=${value}&sort=-created_at`;
     if(filterCategory!=='all'){
       url += `&category=${filterCategory}`;
     }
@@ -76,9 +76,9 @@ const BookPage = () => {
     setTableLoading(true);
     let url;
     if(value==='all'){
-      url = `${productUrl}/all?page=1&sort=-createdAt`;
+      url = `${productUrl}/all?page=1&sort=-created_at`;
     }else{
-      url = `${productUrl}/all?page=1&category=${value}&sort=-createdAt`;
+      url = `${productUrl}/all?page=1&category=${value}&sort=-created_at`;
     }
     try {
       await fechProduct(url);
@@ -93,11 +93,10 @@ const BookPage = () => {
     e.preventDefault();
     setProductPage(1);
     setTableLoading(true);
-    let url = `${productUrl}/all?page=${1}&search=${productSearch}&sort=-createdAt`;
+    let url = `${productUrl}/all?page=${1}&search=${productSearch}&sort=-created_at`;
     if(filterCategory!=='all'){
       url += `&category=${filterCategory}`;
     }
-    console.log(url);
     try {
       await fechProduct(url);
     } catch (error) {
@@ -150,7 +149,7 @@ const BookPage = () => {
           <option value="all">{translateText(language, "dash_all")}</option>
           {
             categories.map((category, index)=>{
-              const {_id: id, name} = category;
+              const {id, name} = category;
               return (
                 <option key={index} value={id}>{name}</option>
               );
@@ -175,7 +174,7 @@ const BookPage = () => {
           <tbody>
             {
               !tableLoading && products.map((product, index)=>{
-                const {_id: id, name, isShow, image, price, discount} = product;
+                const {id, name, isShow, image, price, discount} = product;
                 const altIndex = 10 * currentPage - 10 + (index + 1);
                 return (
                   <tr key={index}>

@@ -70,7 +70,7 @@ const NewArrivalBox = () => {
                         {
                             product_new_arrival.map(item=>{
                                 const {
-                                    _id: productId,
+                                    id: productId,
                                     name,
                                     image,
                                     price,

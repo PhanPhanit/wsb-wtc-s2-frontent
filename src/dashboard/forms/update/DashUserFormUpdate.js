@@ -56,7 +56,7 @@ const DashUserFormUpdate = () => {
         }
     }
     const fetchLocalSingleUser = (userId) => {
-        const singleUser = users.find(item=>item._id===userId);
+        const singleUser = users.find(item=>item.id===userId);
         const {
             name,
             email,

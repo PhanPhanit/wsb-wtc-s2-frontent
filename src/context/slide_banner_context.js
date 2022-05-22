@@ -1,5 +1,5 @@
 import React, {useContext, useReducer, useEffect} from 'react';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import reducer from '../reducers/slide_banner_reducer';
 import {
     getAllSlide as getAllSlideUrl
@@ -35,7 +35,7 @@ const SlideBannerProvider = ({children}) => {
     }
 
     useEffect(()=>{
-        const url = `${getAllSlideUrl}?limit=5&sort=-createdAt`;
+        const url = `${getAllSlideUrl}?limit=5&sort=-created_at`;
         fetchSlideBanner(url)
     }, []);
 

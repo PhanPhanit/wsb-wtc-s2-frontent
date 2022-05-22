@@ -27,7 +27,7 @@ const OrderPage = () => {
   const firstFetchOrder = async () => {
     setFetchOrderLoading(true);
     try {
-      await fetchOrder(`${orderUrl}?page=${orderPage}&sort=-createdAt`);
+      await fetchOrder(`${orderUrl}?page=${orderPage}&sort=-created_at`);
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +37,7 @@ const OrderPage = () => {
   const pageChange = async (_, value) => {
     setOrderPage(value);
     setTableLoading(true);
-    let url = `${orderUrl}?page=${value}&sort=-createdAt`;
+    let url = `${orderUrl}?page=${value}&sort=-created_at`;
     if(filterStatus!=='all'){
       url += `&status=${filterStatus}`;
     }
@@ -60,9 +60,9 @@ const OrderPage = () => {
     setTableLoading(true);
     let url;
     if(value==='all'){
-      url = `${orderUrl}?page=1&sort=-createdAt`;
+      url = `${orderUrl}?page=1&sort=-created_at`;
     }else{
-      url = `${orderUrl}?page=1&status=${value}&sort=-createdAt`;
+      url = `${orderUrl}?page=1&status=${value}&sort=-created_at`;
     }
     try {
       await fetchOrder(url);
@@ -77,7 +77,7 @@ const OrderPage = () => {
     e.preventDefault();
     setOrderPage(1);
     setTableLoading(true);
-    let url = `${orderUrl}?page=${1}&search=${orderSearch}&sort=-createdAt`;
+    let url = `${orderUrl}?page=${1}&search=${orderSearch}&sort=-created_at`;
     if(filterStatus!=='all'){
       url += `&status=${filterStatus}`;
     }
@@ -141,7 +141,7 @@ const OrderPage = () => {
             <tbody>
               {
                 !tableLoading && orders.map((order, index)=>{
-                  const {_id: id, user: {name: userName}, status, orderDate, phoneNumber, total} = order;
+                  const {id, user: {name: userName}, status, orderDate, phoneNumber, total} = order;
                   const altIndex = 10 * currentPage - 10 + (index + 1);
                   return (
                     <tr key={index}>

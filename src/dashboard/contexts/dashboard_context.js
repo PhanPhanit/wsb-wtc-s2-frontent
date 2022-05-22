@@ -5,7 +5,7 @@ import {
     countAllUser as countAllUserUrl,
     getAllProduct as getAllProductUrl
 } from '../../UrlEndPoint';
-import axios from 'axios';
+import axios from '../../axiosPrivate';
 import { sortName } from '../../utils/Tools';
 
 

@@ -36,11 +36,11 @@ const cart_reducer = (state, action) => {
         }
     }
     if(action.type===ADD_TO_CART){
-        const {_id: cartId} = action.payload;
-        const tempItem = state.cart.find((item)=>item._id === cartId);
+        const {id: cartId} = action.payload;
+        const tempItem = state.cart.find((item)=>item.id === cartId);
         if(tempItem){
             const tempCart = state.cart.map((item)=>{
-                if(item._id === cartId){
+                if(item.id === cartId){
                     return {...item, quantity: item.quantity + 1}
                 }
                 return item;
@@ -57,7 +57,7 @@ const cart_reducer = (state, action) => {
         }
     }
     if(action.type===REMOVE_CART_ITEM){
-        const newItem = state.cart.filter((item)=>item._id !== action.payload);
+        const newItem = state.cart.filter((item)=>item.id !== action.payload);
         return {
             ...state,
             cart: newItem
@@ -72,7 +72,7 @@ const cart_reducer = (state, action) => {
     if(action.type===TOGGLE_CART_ITEM_AMOUNT){
         const {id, value} = action.payload;
         const tempCart = state.cart.map((item)=>{
-            if(item._id===id){
+            if(item.id===id){
                 if(value==="increase"){
                     let newAmount = item.quantity + 1;
                     return {...item, quantity: newAmount};

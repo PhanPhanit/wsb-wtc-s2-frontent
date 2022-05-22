@@ -48,11 +48,11 @@ const Slider = () => {
                 {
                     slide_banner.map((item)=>{
                         const {
-                            _id: slideId,
+                            id: slideId,
                             title,
                             subtitle,
                             product: {
-                                _id: productId,
+                                id: productId,
                                 image
                             }
                         } = item;

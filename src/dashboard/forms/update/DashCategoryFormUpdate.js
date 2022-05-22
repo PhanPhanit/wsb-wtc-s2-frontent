@@ -6,7 +6,7 @@ import UploadLoading from '../../../images/upload-loading.gif';
 
 import { useActionContext } from '../../contexts/action_context';
 import { useDashCategoryContext } from '../../contexts/dash_category_context';
-import axios from 'axios';
+import axios from '../../../axiosPrivate';
 import { uploadPhotoCloud } from '../../../UrlEndPoint';
 import { toast } from 'react-toastify';
 import {useLanguageContext} from '../../../context/language_context';
@@ -82,7 +82,7 @@ const DashCategoryFormUpdate = () => {
     }, []);
 
     const fetchLocalSingleCategory = (categoryId) => {
-        const singleCategory = categories.find(category=>category._id==categoryId);
+        const singleCategory = categories.find(category=>category.id==categoryId);
         const {name, isShow, image} = singleCategory;
         setDataFormCategory({name, image, isShow});
     }

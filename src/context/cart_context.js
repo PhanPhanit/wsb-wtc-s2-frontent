@@ -1,7 +1,7 @@
 import React, {useEffect, useContext, useReducer} from 'react';
 import reducer from '../reducers/cart_reducer';
 import {useUserContext} from './user_context';
-import axios from 'axios';
+import axios from '../axiosPrivate';
 import {
     getAllOrderItem as getAllOrderItemUrl
 } from '../UrlEndPoint';
@@ -40,7 +40,7 @@ const CartProvider = ({children}) => {
         dispatch({type: CART_LOADING, payload: false});
     }
 
-    const addToCart = async ({_id: productId, image}) => {
+    const addToCart = async ({id: productId, image}) => {
         dispatch({type: CART_LOADING, payload: true});
         try {
             const {data: {orderItem}} = await axios.post(getAllOrderItemUrl, {product: productId, image: image[0], quantity: 1});

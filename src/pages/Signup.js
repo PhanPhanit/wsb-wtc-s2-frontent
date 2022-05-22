@@ -5,7 +5,7 @@ import GoogleLogo from '../images/google.png';
 import FacebookLogo from '../images/facebook.png';
 import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import {toast} from 'react-toastify';
 import {useUserContext} from '../context/user_context';
 import {
@@ -40,12 +40,13 @@ const Signup = () => {
             const {data} = await axios.post(registerUrl, {...inputValue, name: inputValue.fullName});
             saveUser(data.user);
             toast.success("Registration succeed.");
-            navigate('/');
             setInputValue({
                 fullName: '',
                 email: '',
                 password: ''
             })
+            localStorage.setItem('token', data.token);
+            navigate('/');
         } catch (error) {
             if(error.response){
                 const {msg} = error.response.data

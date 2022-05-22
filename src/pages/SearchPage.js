@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/searchPage.css';
 import ReactStars from 'react-rating-stars-component';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import { productUrl } from '../UrlEndPoint';
 import {sortName, numberWithCommas, formatMoney} from '../utils/Tools';
 import { useProductContext } from '../context/product_context';
@@ -66,7 +66,7 @@ const SearchPage = () => {
             {
                 products.map((product, index)=>{
                     const {
-                        _id: productId,
+                        id: productId,
                         name,
                         author,
                         description,

@@ -6,7 +6,7 @@ import FacebookLogo from '../images/facebook.png';
 import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
 import {toast} from 'react-toastify';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import {useUserContext} from '../context/user_context';
 import {useNavigate} from 'react-router-dom';
 import {
@@ -38,7 +38,9 @@ const Signin = () => {
             setInputValue({email: '', password: ''});
             toast.success("Sign in successfully!")
             setLoading(false);
+            localStorage.setItem('token', data.token);
             navigate('/')
+
         } catch (error) {
             if(error.response){
                 const {msg} = error.response.data;

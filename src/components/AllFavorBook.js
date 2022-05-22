@@ -42,7 +42,7 @@ const AllFavorBook = () => {
         <section className="wrapper-global all-favor-book font-poppin">
             {
                 product_favorit.map((item)=>{
-                    return <AllFavorBookBox key={item._id} {...item} />
+                    return <AllFavorBookBox key={item.id} {...item} />
                 })
             }
         </section>

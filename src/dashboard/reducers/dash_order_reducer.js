@@ -22,9 +22,9 @@ const dash_order_reducer = (state, action) => {
     }
     if(action.type===COMFIRM_ORDER){
         const updateOrder = action.payload;
-        const {_id: orderId} = updateOrder;
+        const {id: orderId} = updateOrder;
         const tempOrders = state.orders.map(item=>{
-            if(item._id === orderId){
+            if(item.id === orderId){
                 return updateOrder;
             }
             return item;

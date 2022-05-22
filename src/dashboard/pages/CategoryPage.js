@@ -77,8 +77,8 @@ const CategoryPage = () => {
                       </div>
                     </td>
                     <td>{category.isShow.toString()}</td>
-                    <td><FaEdit className="icon-edit" onClick={()=>handleEditCategory(category._id)} /></td>
-                    <td><FaTrashAlt className="icon-delete" onClick={()=>deleteCategory(category._id)} /></td>
+                    <td><FaEdit className="icon-edit" onClick={()=>handleEditCategory(category.id)} /></td>
+                    <td><FaTrashAlt className="icon-delete" onClick={()=>deleteCategory(category.id)} /></td>
                   </tr>
                 )
               })

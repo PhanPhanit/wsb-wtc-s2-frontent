@@ -60,8 +60,8 @@ const DashSlideFormUpdate = () => {
     }, []);
 
     const fetchLocalSingleSlide = (slideId) => {
-        const singleSlide = slides.find(category=>category._id==slideId);
-        const {title, subtitle, product: {_id: productId}, isShow} = singleSlide;
+        const singleSlide = slides.find(category=>category.id==slideId);
+        const {title, subtitle, product: {id: productId}, isShow} = singleSlide;
         setDataFormSlide({title, subtitle, product: productId, isShow});
     }
 

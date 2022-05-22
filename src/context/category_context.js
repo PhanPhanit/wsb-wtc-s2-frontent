@@ -1,6 +1,6 @@
 import React, {useContext, useReducer, useEffect} from 'react';
 import reducer from '../reducers/category_reducer';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import {
     getAllCategory as getAllCategoryUrl
 } from '../UrlEndPoint';

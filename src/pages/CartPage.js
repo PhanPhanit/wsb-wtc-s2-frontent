@@ -55,7 +55,7 @@ function CartPage() {
                             (
                                 cart.map((item)=>{
                                     const {
-                                        _id: cartId,
+                                        id: cartId,
                                         image,
                                         product: {
                                             name,

@@ -12,7 +12,7 @@ const AllFavorBookBox = (props) => {
     const {myUser} = useUserContext();
     const {addToCart} = useCartContext();
     const {
-        _id: productId,
+        id: productId,
         name,
         author,
         averageRating,

@@ -30,9 +30,9 @@ const dash_user_reducer = (state, action) => {
     }
     if(action.type===UPDATE_USER){
         const user = action.payload;
-        const {_id: userId} = user;
+        const {id: userId} = user;
         const tempUser = state.users.map((item)=>{
-            if(item._id === userId){
+            if(item.id === userId){
                 return user;
             }
             return item;
@@ -45,7 +45,7 @@ const dash_user_reducer = (state, action) => {
     }
     if(action.type===DELETE_USER){
         const userId = action.payload;
-        const tempUser = state.users.filter(item=>item._id!==userId);
+        const tempUser = state.users.filter(item=>item.id!==userId);
         return {
             ...state,
             users: tempUser

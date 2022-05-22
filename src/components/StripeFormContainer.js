@@ -4,6 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import "../styles/stripe.css";
 import {createPaymentIntent} from '../UrlEndPoint';
+import axios from '../axiosPrivate';
 import {useCartContext} from '../context/cart_context';
 import {useOrderContext} from '../context/order_context';
 
@@ -18,16 +19,14 @@ export default function StripeFormContainer() {
   const [clientSecret, setClientSecret] = useState("");
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    console.log(subtotal+shipping_fee);
-    fetch(createPaymentIntent, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ price: subtotal+shipping_fee}),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setClientSecret(data.clientSecret);
-        setPaymentIntent(data.clientSecret);
+    axios.post(createPaymentIntent, {price: subtotal+shipping_fee})
+      .then((res) => {
+        const {clientSecret} = res.data;
+        setClientSecret(clientSecret);
+        setPaymentIntent(clientSecret);
+      })
+      .catch(err => {
+        console.log(err);
       });
   }, []);
 

@@ -1,5 +1,5 @@
 import React, {useContext, useReducer, useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import {useCategoryContext} from './category_context';
 import reducer from '../reducers/product_reducer';
 import {
@@ -65,7 +65,7 @@ const ProductProvider = ({children}) => {
     const fetchProductNewArrive = async () => {
         dispatch({type: NEW_ARRIVAL_SET_LOADING, payload: true})
         try {
-            const {data:{product: new_arrival}} = await axios.get(`${getAllProductUrl}?limit=10&sort=-createdAt`);
+            const {data:{product: new_arrival}} = await axios.get(`${getAllProductUrl}?limit=10&sort=-created_at`);
             dispatch({type: NEW_ARRIVAL_SET_ERROR, payload: false});
             dispatch({type: NEW_ARRIVAL_SET_PRODUCT, payload: new_arrival});
         } catch (error) {
@@ -90,6 +90,7 @@ const ProductProvider = ({children}) => {
         dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: true})
         try {
             const {data: {product}} = await axios.get(url);
+            console.log(url);
             dispatch({type: SET_SINGLE_PRODUCT, payload: product});
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: false});
             dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})
@@ -98,7 +99,7 @@ const ProductProvider = ({children}) => {
             // fetchPeopleLookingProduct(`${getAllProductUrl}?limit=15&category=${product.category}&sort=-views`);
             fetchPeopleLookingProduct(`${getAllProductUrl}?limit=15&sort=-views`);
             // increase view
-            const productId = product._id;
+            const productId = product.id;
             await axios.get(`${getAllProductUrl}/increase-view/${productId}`);
         } catch (error) {
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: true});
@@ -138,9 +139,9 @@ const ProductProvider = ({children}) => {
 
         let url = "";
         if(category_id) {
-            url = `${getAllProductUrl}?limit=20&page=${state.all_favorit_book.current_page}&category=${category_id}&sort=-createdAt`;
+            url = `${getAllProductUrl}?limit=20&page=${state.all_favorit_book.current_page}&category=${category_id}&sort=-created_at`;
         }else {
-            url = `${getAllProductUrl}?limit=20&page=${state.all_favorit_book.current_page}&sort=-createdAt`;
+            url = `${getAllProductUrl}?limit=20&page=${state.all_favorit_book.current_page}&sort=-created_at`;
         }
 
         fetchProductAllFavorBook(url);

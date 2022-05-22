@@ -4,7 +4,7 @@ import ReadBook from '../images/read-book.png'
 import {FaRegEnvelope} from 'react-icons/fa';
 import '../styles/signup-singin.css';
 import {toast} from 'react-toastify';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import {
     forgotPasswordUrl
 } from '../UrlEndPoint';

@@ -5,7 +5,7 @@ import {IoChevronDown} from 'react-icons/io5';
 import {MdLogout} from 'react-icons/md';
 import '../styles/navbar.css';
 import Logo from '../../components/Logo';
-import axios from 'axios';
+import axios from '../../axiosPrivate';
 import {toast} from 'react-toastify';
 import { useActionContext } from '../contexts/action_context';
 import { useUserContext } from '../../context/user_context';

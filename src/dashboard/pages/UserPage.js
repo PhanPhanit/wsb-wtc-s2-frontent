@@ -33,7 +33,7 @@ const UserPage = () => {
   const firstFetchUser = async () => {
     setFetchUserLoading(true);
     try {
-      await fechUser(`${userUrl}?page=${userPage}&sort=-createdAt`);
+      await fechUser(`${userUrl}?page=${userPage}&sort=-created_at`);
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +43,7 @@ const UserPage = () => {
   const pageChange = async (_, value) => {
     setUserPage(value);
     setTableLoading(true);
-    let url = `${userUrl}?page=${value}&sort=-createdAt`;
+    let url = `${userUrl}?page=${value}&sort=-created_at`;
     if(filterUserRole!=='all'){
       url += `&role=${filterUserRole}`;
     }
@@ -65,9 +65,9 @@ const UserPage = () => {
     setTableLoading(true);
     let url;
     if(value==='all'){
-      url = `${userUrl}?page=1&sort=-createdAt`;
+      url = `${userUrl}?page=1&sort=-created_at`;
     }else{
-      url = `${userUrl}?page=1&role=${value}&sort=-createdAt`;
+      url = `${userUrl}?page=1&role=${value}&sort=-created_at`;
     }
     try {
       await fechUser(url);
@@ -82,7 +82,7 @@ const UserPage = () => {
     e.preventDefault();
     setUserPage(1);
     setTableLoading(true);
-    let url = `${userUrl}?page=${1}&search=${userSearch}&sort=-createdAt`;
+    let url = `${userUrl}?page=${1}&search=${userSearch}&sort=-created_at`;
     if(filterUserRole!=='all'){
       url += `&role=${filterUserRole}`;
     }
@@ -149,7 +149,7 @@ const UserPage = () => {
           <tbody>
             {
               !tableLoading && users.map((user, index)=>{
-                const {_id: id, name, email, role, isActive} = user;
+                const {id, name, email, role, isActive} = user;
                 const altIndex = 10 * currentPage - 10 + (index + 1);
                 return (
                   <tr key={index}>

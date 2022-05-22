@@ -1,6 +1,6 @@
 import React, {useReducer, createContext, useContext, useState} from 'react';
 import {toast} from 'react-toastify';
-import axios from 'axios';
+import axios from '../axiosPublic';
 import reducer from '../reducers/review_reducer';
 import {
     review as reviewUrl,
@@ -52,9 +52,9 @@ const ReviewProvider = ({children})=>{
         setReviewLoading(true);
         let url = "";
         if(rate==="all"){
-            url = `${reviewUrl}?product=${productId}&limit=4&page=${page}&populate=user&sort=-createdAt`;
+            url = `${reviewUrl}?product=${productId}&limit=4&page=${page}&populate=user&sort=-created_at`;
         }else{
-            url = `${reviewUrl}?product=${productId}&limit=4&page=${page}&populate=user&rating=${rate}&sort=-createdAt`;
+            url = `${reviewUrl}?product=${productId}&limit=4&page=${page}&populate=user&rating=${rate}&sort=-created_at`;
         }
         try {
             const {data} = await axios.get(url);

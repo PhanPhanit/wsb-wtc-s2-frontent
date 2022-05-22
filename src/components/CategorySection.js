@@ -14,10 +14,10 @@ const CategorySection = () => {
         <section className="wrapper-global section-cate-wrap font-poppin">
             {
                 category.map((item)=>{
-                    const {_id: categoryId, name, image} = item;
+                    const {id: categoryId, name, image} = item;
                     return (
                         <Link to={`/categories/${categoryId}`} key={categoryId}>
-                            <div className={param.id===item._id? "cate-box active":"cate-box"}>
+                            <div className={param.id==item.id? "cate-box active":"cate-box"}>
                                 <img src={image} alt={name} />
                                 <h3>{name}</h3>
                             </div>

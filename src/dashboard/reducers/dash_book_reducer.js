@@ -36,9 +36,9 @@ const dash_book_reducer = (state, action) => {
     }
     if(action.type===UPDATE_PRODUCT){
         const product = action.payload;
-        const {_id: productId} = product;
+        const {id: productId} = product;
         const tempProduct = state.products.map((item)=>{
-            if(item._id === productId){
+            if(item.id === productId){
                 return product;
             }
             return item;
@@ -51,7 +51,7 @@ const dash_book_reducer = (state, action) => {
     }
     if(action.type===DELETE_PRODUCT){
         const productId = action.payload;
-        const tempProduct = state.products.filter(item=>item._id!==productId);
+        const tempProduct = state.products.filter(item=>item.id!==productId);
         return {
             ...state,
             products: tempProduct

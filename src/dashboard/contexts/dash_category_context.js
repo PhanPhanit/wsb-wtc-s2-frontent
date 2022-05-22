@@ -1,7 +1,7 @@
 import React, {useReducer, useContext, createContext} from 'react';
 import reducer from '../reducers/dash_category_reducer';
 import { categoryUrl } from '../../UrlEndPoint';
-import axios from 'axios';
+import axios from '../../axiosPrivate';
 import { toast } from 'react-toastify';
 import { 
     SET_CATEGORY,
@@ -22,7 +22,7 @@ const DashCategoryContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const fetchCategory = async () => {
-        const url = `${categoryUrl}/all?sort=-createdAt`;
+        const url = `${categoryUrl}/all?sort=-created_at`;
         try {
             const {data: {category}} = await axios.get(url);
             dispatch({type: SET_CATEGORY, payload: category});

@@ -9,7 +9,7 @@ import {dropdownList} from './../utils/Dropdown';
 import {useActionContext} from '../context/action_context'
 import {useUserContext} from '../context/user_context';
 import {useCartContext} from '../context/cart_context';
-import axios from 'axios';
+import axios from '../axiosPrivate';
 import {toast} from 'react-toastify';
 import Logo from './Logo';
 import {useLanguageContext} from '../context/language_context';
@@ -35,9 +35,10 @@ function Navbar() {
         try {
             await axios.delete('/api/v1/auth/logout');
             removeUser();
-            navigate("/");
             setLoading(false);
             toast.success("Logout successfully.");
+            localStorage.setItem('token', '');
+            navigate("/");
         } catch (error) {
             setLoading(false);
             toast.success("Logout error.");

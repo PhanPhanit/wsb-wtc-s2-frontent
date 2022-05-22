@@ -6,7 +6,7 @@ import UploadLoading from '../../../images/upload-loading.gif';
 import { useActionContext } from '../../contexts/action_context';
 import { useDashBookContext } from '../../contexts/dash_book_context';
 import { uploadPhotoCloud } from '../../../UrlEndPoint';
-import axios from 'axios';
+import axios from '../../../axiosPrivate';
 import {toast} from 'react-toastify';
 import {BsFillPlusCircleFill} from 'react-icons/bs';
 import { productUrl } from '../../../UrlEndPoint';
@@ -269,7 +269,7 @@ const DashBookFormCreate = () => {
                             <option value="">----- {translateText(language, "dash_select")} -----</option>
                             {
                                 categories.map((category, index)=>{
-                                    const {_id: id, name} = category;
+                                    const {id, name} = category;
                                     return (
                                         <option key={index} value={id}>{name}</option>
                                     );

@@ -56,7 +56,6 @@ const CustomerRate = ({productId}) => {
             return oldPage + 1;
         });
     }
-    console.log(starPercent);
     return (
         <section className="customer-rate font-poppin">
             <div className="wrapper-global">
@@ -138,14 +137,14 @@ const CustomerRate = ({productId}) => {
                             reviews.map((review)=>{
                                 const {
                                     comment,
-                                    createdAt,
+                                    created_at,
                                     rating,
                                     user: {
                                         name
                                     }
                                 } = review;
                                 return (
-                                    <div key={review._id} className="single-review">
+                                    <div key={review.id} className="single-review">
                                         <div className="left">
                                             <div className="user">
                                                 <FaUser className="icon" />
@@ -160,7 +159,7 @@ const CustomerRate = ({productId}) => {
                                                     isHalf={true}
                                                     edit={false}
                                                 />
-                                                <span>{createdAt.split('T')[0]}</span>
+                                                <span>{created_at.split('T')[0]}</span>
                                             </div>
                                             <p>
                                                 {comment}

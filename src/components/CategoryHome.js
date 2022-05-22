@@ -15,7 +15,7 @@ const CategoryHome = () => {
         <section className="wrapper-global section-cate-wrap font-poppin">
             {
                 category.map((item)=>{
-                    const {_id: categoryId, name, image} = item;
+                    const {id: categoryId, name, image} = item;
                     return (
                         <Link to={`/categories/${categoryId}`} key={categoryId}>
                             <div className="cate-box">

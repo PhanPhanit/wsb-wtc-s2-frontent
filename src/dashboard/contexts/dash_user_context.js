@@ -1,6 +1,6 @@
 import React, {createContext, useReducer, useContext} from 'react';
 import reducer from '../reducers/dash_user_reducer';
-import axios from 'axios';
+import axios from '../../axiosPrivate';
 import {
     SET_USER,
     CREATE_USER,
