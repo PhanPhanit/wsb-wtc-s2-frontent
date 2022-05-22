@@ -1,0 +1,21 @@
+.dash-pagination{
+    background: var(--color-dash-white);
+    padding: 10px;
+    border-radius: 8px;
+}
+.dash-pagination li button{
+    font-size: 18px;
+    padding: 15px;
+    font-weight: bold;
+}
+.dash-pagination li button[aria-current="true"]{
+    background: var(--color-primary);
+    color: var(--color-dash-white);
+}
+.dash-pagination li button[aria-current="true"]:hover{
+    background: var(--color-primary);
+}
+.dash-pagination li div.MuiPaginationItem-root{
+    font-size: 22px;
+    color: var(--color-dash-black);
+}

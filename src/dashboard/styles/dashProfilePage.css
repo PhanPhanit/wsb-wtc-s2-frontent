@@ -1,0 +1,124 @@
+.dash-pro-wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    overflow-y: scroll;
+}
+.dash-pro-wrapper .title{
+    width: 100%;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+.dash-pro-wrapper .pro-body{
+    width: 100%;
+    background: var(--color-dash-white);
+    padding: 30px;
+    margin-top: 20px;
+}
+.dash-pro-wrapper .pro-body > h2{
+    font-size: 30px;
+}
+.dash-pro-wrapper .pro-body .single-edit{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+.dash-pro-wrapper .pro-body .single-edit label{
+    flex-shrink: 0;
+    flex-basis: 150px;
+    font-size: 22px;
+}
+.dash-pro-wrapper .pro-body .single-edit input{
+    background: var(--color-dash-input);
+    border: none;
+    outline: none;
+    border: 5px;
+    flex-basis: 350px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.dash-pro-wrapper .pro-body .single-edit input.disable{
+    background: none;
+    pointer-events: none;
+}
+.dash-pro-wrapper .pro-body .single-edit .btn-edit,
+.dash-pro-wrapper .pro-body .single-edit .btn-save{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    cursor: pointer;
+    background: none;
+    font-size: 20px;
+    color: var(--color-primary);
+}
+.dash-pro-wrapper .pro-body .frm-password{
+    margin-top: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dash-pro-wrapper .pro-body .frm-password .frm-control{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.dash-pro-wrapper .pro-body .frm-password .frm-control label{
+    font-size: 22px;
+}
+.dash-pro-wrapper .pro-body .frm-password .frm-control .input-control{
+    width: 100%;
+    position: relative;
+}
+.dash-pro-wrapper .pro-body .frm-password .frm-control .input-control input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--color-dash-input);
+    padding: 8px 15px;
+    font-size: 18px;
+}
+.dash-pro-wrapper .pro-body .frm-password .frm-control .input-control .icon{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+    color: #A8A7A7;
+}
+.dash-pro-wrapper .pro-body .frm-password .btn-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.dash-pro-wrapper .pro-body .frm-password .btn-wrapper .btn-save{
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: var(--color-dash-white);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash-pro-wrapper .pro-body .frm-password .btn-wrapper .btn-save.disable{
+    pointer-events: none;
+    opacity: 0.8;
+}
+.dash-pro-wrapper .pro-body .frm-password .btn-wrapper .btn-save:hover{
+    opacity: 0.9;
+}

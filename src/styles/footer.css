@@ -1,0 +1,143 @@
+footer {
+  background-color: var(--color-primary);
+  padding-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer .section1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 970px) {
+  footer .section1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+footer h3 {
+  font-size: 25px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer p {
+  color: #fff;
+}
+
+footer .contact-us input {
+  margin: 5px auto;
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+
+footer .contact-us textarea {
+  margin: 5px 0;
+  outline: none;
+  border: none;
+}
+
+footer .contact-us .send-btn {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 25px;
+  background-color: #57c64e;
+  border-radius: 4px;
+}
+
+footer .contact-us .send-btn:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+footer .about-us ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+footer .about-us ul li {
+  color: #fff;
+}
+
+footer .logo .contact-links {
+  margin-top: 10px;
+}
+
+footer .contact-phone a {
+  display: flex;
+}
+
+footer .contact-email a span,
+.contact-phone a span {
+  margin: 0 5px;
+}
+
+footer .contact-email a span:nth-child(1),
+.contact-phone a span:nth-child(1) {
+  font-size: 21px;
+}
+
+footer .contact-email a {
+  display: flex;
+}
+
+footer .logo font,
+.contact-phone a,
+.contact-email a {
+  color: #fff;
+}
+
+footer .logo font {
+  font-weight: 500;
+}
+
+footer .logo font:nth-child(1) {
+  font-size: 50px;
+}
+
+footer .logo font:nth-child(2) {
+  font-size: 32px;
+}
+
+footer .logo font:nth-child(3) {
+  font-size: 38px;
+}
+
+footer .section2 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .section2 ul li {
+  margin: 10px;
+  font-size: 20px;
+}
+
+footer .section2 ul li a {
+  color: var(--color-nav);
+}
+
+footer .copy-right {
+  width: 100%;
+  background-color: #0e6935;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px;
+  font-size: 13px;
+}
+
+footer .copy-right a {
+  color: #fff;
+  display: flex;
+  margin: 4px;
+  font-size: 16px;
+}
+

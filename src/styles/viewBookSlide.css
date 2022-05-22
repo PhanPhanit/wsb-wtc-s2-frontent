@@ -1,0 +1,97 @@
+/* wraper */
+.view-book-slide{
+    padding: 0 15px;
+}
+.view-book-slide .swiper-arrive{
+    width: 100%;
+    padding: 10px;
+}
+.view-book-slide .swiper-arrive .swiper-button-prev::after,
+.view-book-slide .swiper-arrive .swiper-button-next::after{
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--color-text);
+}
+.view-book-slide .box-arrive{
+    padding: 5px;
+    height: 480px;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
+    box-shadow: 0px 0px 3px 1px rgba(189,189,189,0.5);
+}
+/* images */
+.view-book-slide .box-arrive img{
+    width: 100%;
+    height: 300px;
+    /* object-fit: contain; */
+}
+/* into */
+.view-book-slide .box-arrive .info{
+    width: 100%;
+    padding: 8px;
+}
+.view-book-slide .box-arrive .info .title{
+    width: 100%;
+    word-wrap: break-word;
+}
+.view-book-slide .box-arrive .info .author {
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.view-book-slide .box-arrive .info .sold-dis{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.view-book-slide .box-arrive .info .sold-dis .sold{
+    display: flex;
+    align-items: center;
+}
+.view-book-slide .box-arrive .info .sold-dis .sold span{
+    margin-left: 5px;
+}
+.view-book-slide .box-arrive .info .sold-dis .dis-price{
+    color: var(--color-discount);
+    text-decoration: line-through;
+}
+/* star and price */
+.view-book-slide .box-arrive .info .star-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.view-book-slide .box-arrive .info .star-price .star{
+    display: flex;
+    align-items: center;
+}
+.view-book-slide .box-arrive .info .star-price .star .star-icon{
+    margin-right: 10px;
+}
+.view-book-slide .box-arrive .info .star-price .star .star-icon span{
+    font-size: 25px !important;
+}
+@media screen and (max-width: 860px) {
+    .view-book-slide .box-arrive .info .star-price .star{
+        display: block;
+    }
+}
+@media screen and (max-width: 960px){
+    .view-book-slide .box-arrive .info .sold-dis,
+    .view-book-slide .box-arrive .info .star-price{
+        font-size: 14px;
+    }
+    .view-book-slide .box-arrive .info .star-price .star .star-icon span{
+        font-size: 20px !important;
+    }
+}
+@media screen and (max-width: 439px) {
+    .view-book-slide .box-arrive img{
+        object-fit: contain;
+    }
+    .view-book-slide .box-arrive .info{
+        padding: 0 30px;
+    }
+}

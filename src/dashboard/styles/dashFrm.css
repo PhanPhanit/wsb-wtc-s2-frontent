@@ -1,0 +1,275 @@
+.dash-form-wrapper{
+    background: var(--color-dash-white);
+    overflow: hidden;
+    border-radius: 5px;
+}
+/* header */
+.dash-form-wrapper .header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+}
+.dash-form-wrapper .header h2{
+    font-size: 26px;
+}
+.dash-form-wrapper .header .close-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.dash-form-wrapper .header .close-icon:hover{
+    color: var(--color-dash-red);
+}
+/* end header */
+
+/* body */
+.dash-form-wrapper .body{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.dash-form-wrapper .body .input-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control label{
+    font-size: 22px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control input,
+.dash-form-wrapper .body .input-wrapper .frm-control select{
+    border: none;
+    outline: none;
+    background: var(--color-dash-input);
+    font-size: 18px;
+    padding: 8px 15px;
+    border: 2px solid var(--color-dash-input);
+    border-radius: 5px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control .input-control{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control .input-control input{
+    width: 100%;
+    padding-right: 30px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control .input-control .icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #A8A7A7;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control textarea{
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 8px;
+    border: 2px solid var(--color-dash-gray);
+    border-radius: 5px;
+}
+.dash-form-wrapper .body .input-wrapper .frm-control textarea:focus,
+.dash-form-wrapper .body .input-wrapper .frm-control input:focus{
+    border: 2px solid var(--color-primary);
+}
+.dash-form-wrapper .body .upload-photo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box{
+    width: 120px;
+    height: 120px;
+    border: 1px solid var(--color-primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box .delete-photo{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box:hover .delete-photo{
+    display: block;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box .delete-photo:hover{
+    color: var(--color-dash-red);
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .add-photo{
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 28px;
+    height: 120px;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box .upload-loading{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.dash-form-wrapper .body .upload-photo .img-box-wrapper .img-box input[type="file"]{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+/* end body */
+
+/* footer */
+.dash-form-wrapper .footer{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.dash-form-wrapper .footer .btn-frm{
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    font-weight: bold;
+}
+.dash-form-wrapper .footer .btn-save{
+    background: var(--color-primary);
+    color: var(--color-dash-white);
+}
+.dash-form-wrapper .footer .btn-cancel{
+    background: var(--color-dash-white);
+}
+.dash-form-wrapper .footer .btn-frm.disable{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+
+/* order */
+.dash-form-wrapper .body .order-user-date{
+    border: 2px solid var(--color-dash-gray);
+    padding: 4px 20px;
+    font-size: 22px;
+}
+
+.dash-form-wrapper .body .order-user-date div .icon,
+.dash-form-wrapper .body .order-user-date > span{
+    color: #7C7C7C;
+}
+.dash-form-wrapper .body .order-user-date div{
+    display: flex;
+    align-items: center;
+}
+.dash-form-wrapper .body .order-user-date div .icon{
+    font-size: 32px;
+}
+.dash-form-wrapper .body .info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.dash-form-wrapper .body .info div{
+    font-size: 22px;
+    display: flex;
+    gap: 5px 10px;
+    flex-wrap: wrap;
+}
+.dash-form-wrapper .body .tbl-order-item{
+    width: 100%;
+    border-collapse: collapse;
+}
+.dash-form-wrapper .body .tbl-order-item tr{
+    font-size: 22px;
+    border: 1px solid #E8E8E8;
+}
+.dash-form-wrapper .body .tbl-order-item tbody tr td{
+    cursor: pointer;
+}
+.dash-form-wrapper .body .tbl-order-item tr th,
+.dash-form-wrapper .body .tbl-order-item tr td{
+    text-align: center;
+    padding: 10px 8px;
+}
+.dash-form-wrapper .body .tbl-order-item tr th.title,
+.dash-form-wrapper .body .tbl-order-item tr td.title{
+    text-align: left;
+}
+.dash-form-wrapper .body .tbl-order-item tbody tr:hover td{
+    color: var(--color-primary);
+}
+/* end order */
+
+
+
+/* btn order */
+.dash-form-wrapper .footer .btn-comfirm-order,
+.dash-form-wrapper .footer .btn-close-order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-dash-white);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+.dash-form-wrapper .footer .btn-comfirm-order.disable,
+.dash-form-wrapper .footer .btn-close-order.disable{
+    opacity: 0.6;
+    pointer-events: none;
+}
+.dash-form-wrapper .footer .btn-comfirm-order{
+    width: 150px;
+    color: var(--color-dash-white);
+    background: var(--color-primary);
+}
+.dash-form-wrapper .footer .btn-close-order{
+    color: var(--color-dash-red);
+    width: 80px;
+}
+/* end footer */

@@ -1,0 +1,26 @@
+.general-logo{
+    font-weight: bold;
+}
+.general-logo font:first-child{
+    color: var(--color-primary);
+    font-size: 40px;
+}
+.general-logo font:nth-child(2){
+    font-size: 30px;
+    color: black;
+}
+.general-logo font:nth-child(3){
+    font-size: 34px;
+    color: var(--color-primary);
+}
+@media screen and (max-width: 1000px) {
+    .general-logo font:first-child{
+        font-size: 35px;
+    }
+    .general-logo font:nth-child(2){
+        font-size: 25px;
+    }
+    .general-logo font:nth-child(3){
+        font-size: 28px;
+    }
+}

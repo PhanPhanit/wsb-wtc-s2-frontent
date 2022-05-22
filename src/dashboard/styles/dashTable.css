@@ -1,0 +1,79 @@
+.dash-tbl{
+    width: 100%;
+    border-collapse:separate;
+    border-spacing: 0 10px;
+}
+.dash-tbl tr{
+    border-radius: 30px;
+}
+.dash-tbl tr th,
+.dash-tbl tr td{
+    background: var(--color-dash-white);
+    padding: 15px;
+    font-size: 20px;
+}
+.dash-tbl tr th:first-child,
+.dash-tbl tr td:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.dash-tbl tr th:last-child,
+.dash-tbl tr td:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dash-tbl tr td{
+    text-align: center;
+}
+.dash-tbl tr td.photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash-tbl tr td.red{
+    color: var(--color-dash-red);
+}
+.dash-tbl tr td .img-box{
+    width: 100px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.dash-tbl tr td .img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.dash-tbl tr td .slide-photo{
+    width: 80px;
+    height: 80px;
+}
+.dash-tbl tr td .slide-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dash-tbl tr td .img-box:hover img{
+    transform: scale(1.1);
+}
+.dash-tbl tr th.title,
+.dash-tbl tr td.title{
+    text-align: left;
+}
+.dash-tbl tr td .icon-edit{
+    color: var(--color-primary);
+    cursor: pointer;
+}
+.dash-tbl tr td .btn-view-order{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+.dash-tbl tr td .icon-delete{
+    color: var(--color-dash-red);
+    cursor: pointer;
+}

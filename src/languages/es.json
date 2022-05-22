@@ -1,0 +1,203 @@
+{
+    "Home": "Home",
+    "Contact Us": "Contact",
+    "About": "About",
+    "signin": "Sign in",
+    "explore": "Explore",
+    
+
+
+    "foot_about_us": "About Us",
+    "foot_send_us_a_message": "Send us a message",
+    "foot_full_name": "Full name",
+    "foot_your_email": "Email",
+    "foot_your_message": "Your message",
+    "foot_send": "Send",
+    "foot_about_us_description": "Wsbook is an E-commerce website which provide:",
+    "foot_quantity": "Quality",
+    "foot_reliability": "Reliability",
+    "foot_easy_for_payment": "Easy for payment",
+    "foot_fast_delivery": "Fast delivery",
+
+
+    "body_new_arrival": "New Arrival",
+    "Categories": "Categories",
+    "All Favorite Books": "All Favorite Books",
+    "Easy to Pay": "Easy to Pay",
+    "Our Location": "Our Location",
+
+    "add_to_cart": "ADD TO CART",
+    "no_product": "No Product",
+
+
+    "Profile": "Profile",
+    "History": "History",
+    "Go to dashboard": "Go to dashboard",
+    "Logout": "Logout",
+
+    "cart_your_cart": "Your Cart",
+    "cart_item": "Item",
+    "cart_price": "Price",
+    "cart_quantity": "Quantity",
+    "cart_subtotal": "Subtotal",
+    "cart_no_item": "No Item",
+    "cart_continue_shopping": "Continue Shopping",
+    "cart_clear_all_item": "Clear all items",
+    "cart_summary": "Summary",
+    "cart_shipping_fee": "Shipping Fee",
+    "cart_order_total": "Order Total",
+    "cart_checkout": "Checkout",
+
+
+    "payment": "Payment",
+    "billing_details": "Billing Details",
+    "phone_number": "Phone number",
+    "your_phone_number": "Your phone number",
+    "city": "City",
+    "please_select_your_city": "Please select your city",
+    "address": "Address",
+    "your_address": "Your Address",
+    "payment_option": "Payment Option",
+    "next": "Next",
+    "enter_your_card_detail": "Enter Your Card Detail",
+    "your_total_is": "Your total is",
+    "pay_now": "Pay now",
+
+
+    "account_setting": "Account Setting",
+    "history": "History",
+    "your_ordered": "Your ordered",
+    "feedback": "Feedback",
+    "pending": "Pending",
+    "success": "success",
+    "checking": "Checking",
+    "your_feedback": "Your feedback...",
+    "like_this_book": "Like this book?",
+    "rate_now": "rate now",
+    "close": "Close",
+    "send": "Send",
+    "checking_feedback_text": "You has been review this product!",
+    "title": "Title",
+    "price": "Price",
+    "quantity": "Quantity",
+    "date": "Date",
+
+
+    "user_name": "user name",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "change_login_password": "Change login password",
+    "old_password": "Old password",
+    "new_password": "New password",
+    "ry_type_password": "Re-type password",
+    "save": "Save",
+    "cancel": "Cancel",
+
+
+    "success_purchase": "THANK YOU FOR YOUR PURCHASE",
+    "continue_shopping": "continue shopping",
+    "go_to_history": "got to history",
+
+
+
+
+    "Dashboard": "Dashboard",
+    "Category": "Category",
+    "Book": "Book",
+    "Slide": "Slide",
+    "Order": "Order",
+    "User": "User",
+
+
+    "dash_total_order": "Total Order",
+    "dash_total_price": "Total Price",
+    "dash_total_user": "Total User",
+    "dash_most_sold": "Most Sold",
+    "dash_product": "Product",
+    "dash_most_view": "Most View",
+    "dash_sold": "Sold",
+
+
+    "dash_category_list": "Category List",
+    "dash_create": "Create",
+    "dash_no": "No.",
+    "dash_name": "Name",
+    "dash_photo": "Photo",
+    "dash_show": "Show",
+    "dash_edit": "Edit",
+    "dash_delete": "Delete",
+    "dash_create_new_category": "Create New Category",
+    "dash_update_category": "Update Category",
+    "dash_name_of_category": "Name of category",
+    "dash_file": "File",
+    "dash_id": "ID",
+    
+
+    "dash_search_here": "Search here...",
+    "dash_all": "All",
+    "dash_price": "Price",
+    "dash_discount": "Discount",
+    "dash_name_of_book": "Name of book",
+    "dash_author": "Author",
+    "dash_publisher": "Publisher",
+    "dash_genre": "Genre",
+    "dash_language": "Language",
+    "dash_published": "Published",
+    "dash_country": "Country",
+    "dash_category": "Category",
+    "dash_select": "Select",
+    "dash_description": "Description",
+    "dash_create_new_product": "Create New Product",
+    "dash_update_product": "Update Product",
+
+
+    "dash_create_new_slide": "Create New Slide",
+    "dash_update_slide": "Update Slide",
+    "dash_slide_list": "Slide List",
+    "dash_title": "Title",
+    "dash_subtitle": "Subtitle",
+    "dash_product_id": "Product ID",
+
+
+    "dash_view_order_detail": "View Order Detail",
+    "dash_order_date": "Order Date",
+    "dash_phone_number": "Phone Number",
+    "dash_process": "Process",
+    "dash_detail": "Detail",
+    "dash_success": "success",
+    "dash_pending": "pending",
+    "dash_view": "View",
+    "dash_order_title": "View Order Detail",
+    "dash_user": "User",
+    "dash_date": "Date",
+    "dash_payment_intent": "Payment Intent",
+    "dash_phone": "Phone",
+    "dash_city": "City",
+    "dash_address": "Address",
+    "dash_delivery": "Delivery",
+    "dash_confirm_success": "Confirm success",
+    "dash_confirm_order": "Confirm order",
+
+
+
+
+    "dash_profile_title": "ACCOUNT INFORMATION",
+    "dash_username": "Username",
+    "dash_change_password": "Change Password",
+    "dash_current_password": "Current Password",
+    "dash_your_current_password": "Your Current Password",
+    "dash_new_password": "New Password",
+    "dash_confirm_password": "Confirm Password",
+
+
+    "dash_create_user": "Create User",
+    "dash_update_user": "Update User",
+    "dash_active": "Active",
+    "dash_role": "Role",
+
+
+    "loading": "loading...",
+    "total": "Total",
+    "ID": "ID"
+}

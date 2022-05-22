@@ -1,0 +1,96 @@
+.sidebar{
+    background: var(--color-white);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: -120%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000002;
+    transition: .5s linear;
+    display: none;
+    /* -webkit-box-shadow: -2px 0px 15px 0px rgba(0,0,0,0.46);
+    -moz-box-shadow: -2px 0px 15px 0px rgba(0,0,0,0.46);
+    box-shadow: -2px 0px 15px 0px rgba(0,0,0,0.46); */
+    
+}
+.sidebar.open-sidebar{
+    right: 0;
+}
+@media screen and (max-width: 930px) {
+    .sidebar{
+        display: block;
+    }
+}
+/* header and close icon */
+.sidebar .header{
+    width: 100%;
+    text-align: right;
+}
+.sidebar .close-icon{
+    font-size: 34px;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+.sidebar .close-icon:hover{
+    opacity: 0.7;
+}
+/* end header and close icon */
+
+/* navbar */
+.sidebar .navbar{
+    width: 100%;
+    margin-top: 30px;
+}
+.sidebar .navbar ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar .navbar ul li{
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 25px;
+    transition: .2s;
+    cursor: pointer;
+}
+.sidebar .navbar ul li:hover{
+    color: var(--color-primary)
+}
+.sidebar .navbar ul li:not(:first-child){
+    margin-top: 40px;
+}
+.sidebar .navbar ul li:last-child{
+    margin-top: 100px;
+}
+.sidebar .navbar ul li .btn-signup{
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 5px 25px;
+    border-radius: 20px;
+}
+/* drobox */
+.sidebar .navbar ul li.parent-drop{
+    text-align: center;
+    width: 50%;
+}
+.sidebar .navbar ul li .dropbox{
+    background: var(--color-primary);
+    transition: 5s;
+    transition: 0.5s;
+    overflow: hidden;
+    max-height: 0;
+}
+.sidebar .navbar ul li.parent-drop:hover .dropbox{
+    max-height: 500px;
+}
+.sidebar .navbar ul li .dropbox span{
+    display: block;
+    color: var(--color-white);
+    padding: 8px 0;
+    font-size: 22px;
+}
+.sidebar .navbar ul li .dropbox span:hover{
+    opacity: 0.8;
+}

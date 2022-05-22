@@ -1,0 +1,84 @@
+.pagination-wrapper{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.pagination-wrapper .MuiPagination-ul li:first-child button,
+.pagination-wrapper .MuiPagination-ul li:last-child button{
+    background-color: var(--color-primary);
+}
+.pagination-wrapper .MuiPagination-ul li:first-child button svg path,
+.pagination-wrapper .MuiPagination-ul li:last-child button svg path{
+    stroke: var(--color-white);
+}
+.pagination-wrapper .MuiPagination-ul li button{
+    background-color: var(--color-white);
+    border-radius: 5px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: bold;
+}
+.pagination-wrapper .MuiPagination-ul li button:hover:not([aria-current="true"]){
+    opacity: 0.7;
+}
+.pagination-wrapper .MuiPagination-ul li button[aria-current="true"]{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+@media screen and (max-width: 350px) {
+    .pagination-wrapper .MuiPagination-ul li button{
+        font-size: 12px;
+        min-width: 25px;
+        height: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .pagination-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.pagination-wrapper .pagination{
+    display: flex;
+}
+.pagination-wrapper .pagination li{
+    margin: 0 5px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-primary);
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.pagination-wrapper .pagination li.previous,
+.pagination-wrapper .pagination li.next{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    color: white;
+}
+.pagination-wrapper .pagination li.previous svg path,
+.pagination-wrapper .pagination li.next svg path{
+    stroke: #fff;
+}
+.pagination-wrapper .pagination li.active{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+@media screen and (max-width: 600px) {
+    .pagination-wrapper .pagination li{
+        padding: 4px 10px;
+        font-size: 12px;
+        margin: 0 2px;
+    }
+} */

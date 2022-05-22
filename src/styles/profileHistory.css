@@ -1,0 +1,87 @@
+.account-history{
+    padding: 20px;
+}
+.account-history .history-order-container > .title{
+    width: 100%;
+    text-align: center;
+}
+.account-history .history-order-container{
+    width: 100%;
+    border: 2px solid gray;
+    margin-top: 20px;
+}
+.account-history .history-order-container .title{
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 2px solid gray;
+}
+.account-history .history-order-container .title h4{
+    font-size: 22px;
+    opacity: 0.8;
+}
+.account-history .history-order-container .body-item{
+    width: 100%;
+    height: 700px;
+    overflow-y: scroll;
+}
+.account-history .history-order-container .body-item .order-history-loading{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+.account-history .history-order-container .body-item .single-item{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    border-bottom: 2px solid gray;
+    padding: 10px;
+}
+.account-history .history-order-container .body-item .single-item:last-child{
+    border-bottom: none;
+}
+.account-history .history-order-container .body-item .single-item > p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.account-history .history-order-container .body-item .single-item .p-info{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+}
+@media screen and (max-width: 950px) {
+    .account-history .history-order-container .body-item .single-item .p-info{
+        grid-template-columns: 100px 1fr;
+    }
+}
+.account-history .history-order-container .body-item .single-item .p-info .img-box img{
+    width: 100%;
+}
+.account-history .history-order-container .body-item .single-item .p-info .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.account-history .history-order-container .body-item .single-item .p-info .info .btn-feedback{
+    margin-top: auto;
+    margin-left: auto;
+    background: var(--color-primary);
+    outline: none;
+    border: none;
+    color: var(--color-white);
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.account-history .history-order-container .body-item .single-item .p-info .info .btn-pending{
+    pointer-events: none;
+    opacity: 0.6;
+}
+.account-history .history-order-container .body-item .single-item .p-info .info span{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}

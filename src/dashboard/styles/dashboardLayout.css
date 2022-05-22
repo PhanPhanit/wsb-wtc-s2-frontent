@@ -1,0 +1,21 @@
+.dashboard-wrapper{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-dash-body);
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-wrapper .wrapper-nav-body{
+    width: 100%;
+    height: calc(100vh - 68px);
+    flex: 1;
+    display: flex;
+}
+.dashboard-wrapper .wrapper-nav-body .dahboard-page{
+    flex: 1;
+    height: 100%;
+}

@@ -1,0 +1,30 @@
+.easy-pay{
+    background-color: var(--color-white);
+    padding: 60px 8px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.04);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.04);
+}
+.easy-pay .easy-pay-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.easy-pay .easy-pay-wrapper img{
+    height: 45px;
+}
+@media screen and (max-width: 960px) {
+    .easy-pay .easy-pay-wrapper img{
+        height: 35px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .easy-pay .easy-pay-wrapper img{
+        height: 30px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .easy-pay .easy-pay-wrapper img{
+        height: 25px;
+    }
+}

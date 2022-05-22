@@ -1,0 +1,263 @@
+#view-book-header{
+    width: 100%;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.05);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.05);
+}
+@media screen and (max-width: 1200px){
+    #view-book-header{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #view-book-header{
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+}
+/* left */
+#view-book-header .left{
+    grid-column: 1 / 6;
+    border-right: 2px solid rgb(128, 128, 128, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+@media screen and (max-width: 1200px){
+    #view-book-header .left{
+        grid-column: auto;
+    }
+}
+#view-book-header .left .img-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: #F9F9F9;
+    border: 2px solid #c9c9c966;
+    margin-right: 20px;
+}
+#view-book-header .left > img{
+    width: 300px;
+}
+#view-book-header .left .img-box img{
+    width: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#view-book-header .left .img-box img.active{
+    outline: 2px solid var(--color-primary);
+}
+#view-book-header .left .img-box img:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width: 1200px){
+    #view-book-header .left > img{
+        width: 250px;
+    }
+}
+@media screen and (max-width: 900px){
+    #view-book-header .left{
+        padding: 0;
+    }
+    #view-book-header .left > img{
+        width: 230px;
+    }
+    #view-book-header .left .img-box img{
+        width: 35px;
+    }
+}
+@media screen and (max-width: 768px){
+    #view-book-header .left{
+        display: block;
+        position: relative;
+    }
+    #view-book-header .left .img-box{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        flex-direction: row;
+        padding: 8px 15px;
+        transform: translate(-50%, 50%);
+    }
+    #view-book-header .left > img{
+        width: 100%;
+    }
+    #view-book-header .left .img-box img{
+        width: 45px;
+    }
+}
+
+/* right */
+
+#view-book-header .right{
+    grid-column: 6 / -1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+@media screen and (max-width: 1200px){
+    #view-book-header .right{
+        grid-column: auto;
+    }
+}
+@media screen and (max-width: 768px){
+    #view-book-header .right{
+        padding: 40px 0;
+        margin-top: 10px;
+    }
+}
+#view-book-header .right .title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#view-book-header .right .title h2{
+    font-size: 40px;
+}
+#view-book-header .right > span{
+    font-size: 18px;
+    opacity: 0.8;
+}
+#view-book-header .right .stars-rating{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+#view-book-header .right .stars-rating .star-icon span{
+    font-size: 25px !important;
+}
+#view-book-header .right .stars-rating > span{
+    font-size: 18px;
+}
+#view-book-header .right .price{
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+#view-book-header .right .price h3{
+    font-size: 22px;
+}
+#view-book-header .right .price .discount{
+    color: var(--color-discount);
+    text-decoration: line-through;
+}
+#view-book-header .right .info-book{
+    width: 85%;
+    border: 1px solid #b9b9b9;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 15px;
+    padding: 10px;
+}
+@media screen and (max-width: 1300px){
+    #view-book-header .right .info-book{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    #view-book-header .right .info-book{
+        width: 98%;
+    }
+}
+#view-book-header .right .info-book > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#view-book-header .right .info-book > div span{
+    font-size: 20px;
+    opacity: 0.8;
+    font-style: italic;
+}
+#view-book-header .right .info-book > div h5{
+    font-size: 20px;
+}
+#view-book-header .right .btn-add-cart{
+    margin: 0 auto;
+    margin-top: 20px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#view-book-header .right .btn-add-cart:hover{
+    opacity: 0.8;
+}
+#view-book-header .right .btn-add-cart .icon{
+    font-size: 18px;
+    margin-right: 5px;
+}
+#view-book-header .right .btn-add-cart span{
+    transform: translateY(10%);
+}
+
+@media screen and (max-width: 1200px){
+    /* #view-book-header .right .title span{
+        font-size: 28px;
+    } */
+    #view-book-header .right .stars-rating .star-icon span{
+        font-size: 22px !important;
+    }
+    #view-book-header .right .stars-rating > span{
+        font-size: 16px;
+    }
+    #view-book-header .right .price h3{
+        font-size: 18px;
+    }
+    #view-book-header .right .price .discount{
+        font-size: 16px;
+        color: var(--color-discount);
+    }
+    #view-book-header .right .info-book > div span,
+    #view-book-header .right .info-book > div h5{
+        font-size: 18px;
+    }
+    #view-book-header .right .btn-add-cart,
+    #view-book-header .right .btn-add-cart .icon{
+        font-size: 16px;
+    }
+}
+
+/* description */
+
+#view-book-header .description{
+    grid-column: 2 / -2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#view-book-header .description h3{
+    font-size: 28px;
+}
+#view-book-header .description span{
+    font-size: 18px;
+}
+@media screen and (max-width: 1200px){
+    #view-book-header .description{
+        grid-column: 1 / -1;
+    }
+}
+@media screen and (max-width: 768px){
+    #view-book-header .description{
+        margin-top: 0;
+    }
+}
