@@ -70,8 +70,8 @@ const ProfilePage = () => {
       setIsNameEdit(true);
     } catch (error) {
       if(error.response){
-        const {msg} = error.response.data;
-        toast.error(msg)
+        const {message} = error.response.data;
+        toast.error(message)
       }
     }
     setEditNameLoading(false);
@@ -90,8 +90,8 @@ const ProfilePage = () => {
       toast.success("Update password successfully.");
     } catch (error) {
       if(error.response){
-        const {msg} = error.response.data;
-        toast.error(msg)
+        const {message} = error.response.data;
+        toast.error(message)
       }
     }
     setChangePasswordLoading(false);
@@ -105,8 +105,8 @@ const ProfilePage = () => {
       setIsEmailEdit(true);
     } catch (error) {
       if(error.response){
-        const {msg} = error.response.data;
-        toast.error(msg)
+        const {message} = error.response.data;
+        toast.error(message)
       }
     }
     setEditEmailLoading(false);
@@ -174,7 +174,7 @@ const ProfilePage = () => {
       </div>
       <div className="pro-body">
         <h2><Translate>dash_username</Translate></h2>
-        <form className="single-edit">
+        <form className="single-edit" onSubmit={(e)=>e.preventDefault()}>
           <label><Translate>dash_name</Translate></label>
           <input
             type="text"
@@ -202,7 +202,7 @@ const ProfilePage = () => {
           }
         </form>
         <h2><Translate>email</Translate></h2>
-        <form className="single-edit">
+        <form className="single-edit" onSubmit={e=>e.preventDefault()}>
           <label><Translate>email</Translate></label>
           <input
             type="text"

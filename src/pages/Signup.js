@@ -6,6 +6,7 @@ import FacebookLogo from '../images/facebook.png';
 import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
 import axios from '../axiosPublic';
+import axiosPrivate from '../axiosPrivate';
 import {toast} from 'react-toastify';
 import {useUserContext} from '../context/user_context';
 import {
@@ -46,11 +47,12 @@ const Signup = () => {
                 password: ''
             })
             localStorage.setItem('token', data.token);
+            axiosPrivate.defaults.headers['Authorization'] = `Bearer ${data.token}`;
             navigate('/');
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data
-                toast.error(msg);
+                const {message} = error.response.data
+                toast.error(message);
             }
         }
         setBtnDisable(false);

@@ -1,11 +1,8 @@
 import React, {useEffect} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axiosPrivate';
 import {useUserContext} from '../context/user_context';
 import {toast} from 'react-toastify';
-import {
-    responseCookie
-} from '../UrlEndPoint';
 
 const SendToken = () => {
     const navigate = useNavigate();
@@ -13,14 +10,17 @@ const SendToken = () => {
     const {saveUser, removeUser, setLoading} = useUserContext();
 
 
-    const handleSendToken = async (token) => {
+    const handleSaveToken = async (token) => {
         setLoading(true);
         try {
-            const {data} = await axios.post(responseCookie, {token});
-            saveUser(data.user)
-            navigate("/");
+            localStorage.setItem('token', token);
+            axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+            const {data} = await axios.get('/api/v1/users/showMe');
+            saveUser(data.user);
+            toast.success("Sign in successfully!");
             setLoading(false);
-            toast.success("Sign in successfully!")
+            navigate("/");
+
         } catch (error) {
             removeUser();
             setLoading(false);
@@ -31,7 +31,7 @@ const SendToken = () => {
 
     useEffect(()=>{
         const token = query.get("token");
-        handleSendToken(token);
+        handleSaveToken(token);
     }, [])
 
     return (

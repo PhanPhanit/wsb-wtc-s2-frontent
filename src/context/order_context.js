@@ -41,8 +41,8 @@ const OrderProvider = ({children}) => {
             const {data} = await axios.post(createOrderUrl, order);
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                console.log(msg);
+                const {message} = error.response.data;
+                console.log(message);
             }
         }
     }
@@ -55,8 +55,8 @@ const OrderProvider = ({children}) => {
             dispatch({type: SET_ORDER_ITEM, payload: order});
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                console.log(msg);
+                const {message} = error.response.data;
+                console.log(message);
             }
         }
         dispatch({type: SET_ORDER_LOADING, payload: false});

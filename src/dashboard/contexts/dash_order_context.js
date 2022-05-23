@@ -1,6 +1,6 @@
 import React,  {createContext, useContext, useReducer} from "react";
 import reducer from '../reducers/dash_order_reducer';
-import axios from "axios";
+import axios from "../../axiosPrivate";
 import {
     SET_ORDER,
     SET_VIEW_ORDER_ID,

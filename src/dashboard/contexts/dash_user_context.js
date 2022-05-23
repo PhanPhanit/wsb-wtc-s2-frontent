@@ -44,7 +44,13 @@ const DashUserContextProvider = ({children}) => {
             dispatch({type: DELETE_USER, payload: userId});
             toast.success("User had been removed.");
         } catch (error) {
-            console.log(error);
+            if(error.response){
+                if(error.response.status === 500){
+                    toast.error('Many relationship can not delete!');
+                }else{
+                    toast.error('Error!');
+                }
+            }
         }
     }
 

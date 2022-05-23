@@ -53,7 +53,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categories/:id" element={<Category />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          } />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/search" element={<SearchPage />} />

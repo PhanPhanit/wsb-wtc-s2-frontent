@@ -7,6 +7,7 @@ import {FaRegEnvelope, FaEyeSlash, FaEye} from 'react-icons/fa';
 import '../styles/signup-singin.css';
 import {toast} from 'react-toastify';
 import axios from '../axiosPublic';
+import axiosPrivate from '../axiosPrivate';
 import {useUserContext} from '../context/user_context';
 import {useNavigate} from 'react-router-dom';
 import {
@@ -35,6 +36,7 @@ const Signin = () => {
         try {
             const {data} = await axios.post(loginUrl, inputValue);
             saveUser(data.user);
+            axiosPrivate.defaults.headers['Authorization'] = `Bearer ${data.token}`;
             setInputValue({email: '', password: ''});
             toast.success("Sign in successfully!")
             setLoading(false);
@@ -43,8 +45,8 @@ const Signin = () => {
 
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
             removeUser();
             setLoading(false);

@@ -1,5 +1,5 @@
 import React, {useContext, createContext, useReducer} from "react";
-import axios from "axios";
+import axios from "../../axiosPrivate";
 import reducer from '../reducers/dash_book_reducer';
 import { toast } from "react-toastify";
 import { productUrl } from "../../UrlEndPoint";
@@ -51,7 +51,13 @@ const DashBookContextProvider = ({children}) => {
             dispatch({type: DELETE_PRODUCT, payload: productId});
             toast.success("Book had been removed.");
         } catch (error) {
-            console.log(error);
+            if(error.response){
+                if(error.response.status === 500){
+                    toast.error('Many relationship can not delete!');
+                }else{
+                    toast.error('Error!');
+                }
+            }
         }
     }
 

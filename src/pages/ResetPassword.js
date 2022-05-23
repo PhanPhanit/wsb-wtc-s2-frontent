@@ -50,11 +50,11 @@ const ResetPassword = () => {
             setResetPasswordSuccess(true);
             setTimeout(()=>{
                 navigate('/signin');
-            }, 5000);
+            }, 3000);
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
             setLoading(false);
         }

@@ -28,7 +28,11 @@ const DashboardContextProvider = ({children}) => {
                 `${getAllProductUrl}?sort=-sold&limit=8`,
                 `${getAllProductUrl}?sort=-views&limit=8`
             ];
-            const responses = await axios.all(allUrlEndPoint.map(singleUrl => axios.get(singleUrl)));
+            let responses = [];
+            for(let singleUrl of allUrlEndPoint){
+                const res = await axios.get(singleUrl);
+                responses = [...responses, res];
+            }
             setTotalOrder(responses[0].data.totalOrder);
             setTotalPrice(responses[1].data.totalPrice);
             setTotalUser(responses[2].data.totalUser);

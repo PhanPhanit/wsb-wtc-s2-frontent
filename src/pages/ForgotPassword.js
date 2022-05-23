@@ -22,8 +22,8 @@ const ForgetPassword = () => {
             setForgotSuccess(true);
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
             setLoading(false);
         }

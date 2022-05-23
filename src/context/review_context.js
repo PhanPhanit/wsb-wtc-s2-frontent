@@ -1,6 +1,7 @@
 import React, {useReducer, createContext, useContext, useState} from 'react';
 import {toast} from 'react-toastify';
-import axios from '../axiosPublic';
+import axiosPublic from '../axiosPublic';
+import axiosPrivate from '../axiosPrivate';
 import reducer from '../reducers/review_reducer';
 import {
     review as reviewUrl,
@@ -37,12 +38,12 @@ const ReviewProvider = ({children})=>{
     const createReview = async () => {
         setReviewLoading(true);
         try {
-            await axios.post(reviewUrl, review);
+            await axiosPrivate.post(reviewUrl, review);
             toast.success("Successful");
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
         }
         setReviewLoading(false);
@@ -57,12 +58,12 @@ const ReviewProvider = ({children})=>{
             url = `${reviewUrl}?product=${productId}&limit=4&page=${page}&populate=user&rating=${rate}&sort=-created_at`;
         }
         try {
-            const {data} = await axios.get(url);
+            const {data} = await axiosPublic.get(url);
             dispatch({type: SET_REVIEW, payload: data});
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
         }
         setReviewLoading(false);
@@ -74,7 +75,7 @@ const ReviewProvider = ({children})=>{
     const checkReviewExist = async (productId, userId) => {
         try {
             const url = `${reviewUrl}?product=${productId}&user=${userId}`;
-            const {data:{review}} = await axios.get(url);
+            const {data:{review}} = await axiosPublic.get(url);
             if(review.length>0){
                 return {message: true, error: false};
             }
@@ -87,7 +88,7 @@ const ReviewProvider = ({children})=>{
     const fetchPercentStar = async (productId) => {
         dispatch({type: PERCENT_STAR_LOADING, payload: true});
         try {
-            const {data: {percentStar}} = await axios.get(`${starPercentUrl}/${productId}`);
+            const {data: {percentStar}} = await axiosPublic.get(`${starPercentUrl}/${productId}`);
             dispatch({type: SET_PERCENT_STAR, payload: percentStar})
         } catch (error) {
             console.log(error);

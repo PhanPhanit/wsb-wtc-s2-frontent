@@ -42,7 +42,13 @@ const DashCategoryContextProvider = ({children}) => {
             dispatch({type: DELETE_CATEGORY, payload: categoryId});
             toast.success("Category had been removed.");
         } catch (error) {
-            console.log(error);
+            if(error.response){
+                if(error.response.status === 500){
+                    toast.error('Many relationship can not delete!');
+                }else{
+                    toast.error('Error!');
+                }
+            }
         }
     }
 

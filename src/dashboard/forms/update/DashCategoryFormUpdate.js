@@ -49,8 +49,8 @@ const DashCategoryFormUpdate = () => {
             toast.success("Update category successfully.");
         } catch (error) {
             if(error.response){
-                const {msg} = error.response.data;
-                toast.error(msg)
+                const {message} = error.response.data;
+                toast.error(message)
             }
             setUpdateCategoryLoading(false);
         }
