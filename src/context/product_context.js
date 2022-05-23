@@ -90,7 +90,6 @@ const ProductProvider = ({children}) => {
         dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: true})
         try {
             const {data: {product}} = await axios.get(url);
-            console.log(url);
             dispatch({type: SET_SINGLE_PRODUCT, payload: product});
             dispatch({type: SET_SINGLE_PRODUCT_ERROR, payload: false});
             dispatch({type: SET_SINGLE_PRODUCT_LOADING, payload: false})

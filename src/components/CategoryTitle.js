@@ -7,7 +7,7 @@ const Category = ({title}) => {
     const {language} = useLanguageContext();
     return (
         <section className="wrapper-global category">
-            <h2 className={language=='kh'?"font-cat font-khmer":"font-cat font-poppin"}><Translate>{title}</Translate></h2>
+            <h2 className={language==='kh'?"font-cat font-khmer":"font-cat font-poppin"}><Translate>{title}</Translate></h2>
         </section>
     )
 }

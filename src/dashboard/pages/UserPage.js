@@ -101,6 +101,7 @@ const UserPage = () => {
 
   useEffect(()=>{
     firstFetchUser();
+    // eslint-disable-next-line
   }, []);
 
   if(fetchUserLoading){

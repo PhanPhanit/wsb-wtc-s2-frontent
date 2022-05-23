@@ -113,6 +113,7 @@ const BookPage = () => {
   useEffect(()=>{
     firstFetchProduct();
     firstFetchCategory();
+    // eslint-disable-next-line
   }, []);
 
 
