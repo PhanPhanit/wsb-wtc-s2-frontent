@@ -10,9 +10,12 @@ import {
     numberWithCommas,
     formatMoney,
 } from '../utils/Tools';
+import Translate from '../Translate';
+import {useLanguageContext} from '../context/language_context';
 
 
 const ViewBookDetail = () => {
+    const {language: lang} = useLanguageContext();
     const {myUser} = useUserContext();
     const {single_product: {product}} = useProductContext();
     const {addToCart} = useCartContext();
@@ -92,8 +95,8 @@ const ViewBookDetail = () => {
                     )
                 }
             </div>
-            <div className="description">
-                <h3>Description</h3>
+            <div className={lang==='kh'?"description font-khmer":"description"}>
+                <h3><Translate>description</Translate></h3>
                 <span>{description}</span>
             </div>
         </section>

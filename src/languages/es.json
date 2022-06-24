@@ -199,5 +199,11 @@
 
     "loading": "loading...",
     "total": "Total",
-    "ID": "ID"
+    "ID": "ID",
+
+    "description": "Description",
+    "Suggestion": "Suggestion",
+    "People also looking for": "People also looking for",
+    "customer_rate": "Customers Rate",
+    "customer_review": "Customers Review"
 }

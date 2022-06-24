@@ -5,7 +5,10 @@ import {FaUser} from 'react-icons/fa';
 import { useReviewContext } from '../context/review_context';
 import { useProductContext } from '../context/product_context';
 import {numberWithCommas} from '../utils/Tools';
+import Translate from '../Translate';
+import { useLanguageContext } from '../context/language_context';
 const CustomerRate = ({productId}) => {
+    const {language} = useLanguageContext();
     const [page, setPage] = useState(1);
     const [starFilter, setStarFilter] = useState("all");
     const {
@@ -57,13 +60,13 @@ const CustomerRate = ({productId}) => {
         });
     }
     return (
-        <section className="customer-rate font-poppin">
+        <section className={language==='kh'?"customer-rate font-khmer":"customer-rate font-poppin"}>
             <div className="wrapper-global">
 
                 {
                     starPercent.length>0 && (
                         <>
-                            <h3 className="title">Customers Rate: {numberWithCommas(product.numOfReviews)}</h3>
+                            <h3 className="title"><Translate>customer_rate</Translate>: {numberWithCommas(product.numOfReviews)}</h3>
                             <div className="product-total-stars">
                                 <div className="left">
 
@@ -110,7 +113,7 @@ const CustomerRate = ({productId}) => {
                 }
 
                 
-                <h3 className="title">Customers Review</h3>
+                <h3 className="title"><Translate>customer_review</Translate></h3>
                 <div className="filter-review-star">
                     <select value={starFilter} onChange={e=>setStarFilter(e.target.value)}>
                         <option value="all">All</option>
