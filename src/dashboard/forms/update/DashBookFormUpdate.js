@@ -113,7 +113,7 @@ const DashBookFormUpdate = () => {
             await updateProduct(`${productUrl}/${updateProductId}`, tempDataFormProduct);
             setCreateProductLoading(false);
             closeFormUpdate();
-            toast.success("Create book successfully.");
+            toast.success("Update book successfully.");
         } catch (error) {
             if(error.response){
                 const {message} = error.response.data;
